@@ -1,4 +1,4 @@
-PATHNAME=$(shell pwd)
+ATHNAME=$(shell pwd)
 BASENAME=$(shell basename $(PATHNAME))
 
 TAG=`cat VERSION.txt`
@@ -110,6 +110,9 @@ sphinx:
 ###############################################################################
 
 gh-pages:
+	git add .
+	git commit -m "adding documentation"
+	git push
 	git checkout gh-pages
 	make pages
 
@@ -143,6 +146,7 @@ ghphtml:
 	cd /tmp
 	rm -rf $(DIR)
 	cd /tmp; git clone git://github.com/futuregrid/$(PROJECT).git
+	cp $(DIR)/Makefile .
 	cd $(DOC); ls; make html
 	rm -fr _static
 	rm -fr _source
