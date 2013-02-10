@@ -19,6 +19,6 @@ git:
 	git add . _sources _static   
 	git commit -a -m "updating the github pages"
 	git push
-	git checkout master
+#	git checkout master
 
 
