@@ -10,9 +10,9 @@ html:
 	rm -rf $(DIR)
 	cd /tmp; git clone git://github.com/futuregrid/$(PROJECT).git
 	cd $(DOC); ls; make html
-	rm -r _static
-	rm -r _source
-	rm -r *.html
+	rm -fr _static
+	rm -fr _source
+	rm -fr *.html
 	cp -r $(DOC)/build/html/* .
 
 git:
